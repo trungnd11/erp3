@@ -1,0 +1,61 @@
+.card_custom {
+    background-color: var(--vz-card-bg);
+}
+.icon_custom {
+    font-size: 17px;
+    margin-right: 0.5rem;
+}
+.icon_custom_down {
+    font-size: 17px;
+    margin-left: 0.5rem!important;
+}
+.new_view_custom {
+    display: flex;
+    align-items: center;
+}
+.new_view_custom:hover {
+    background-color: rgba(208, 215, 222, 0.32);
+    color: rgb(36, 41, 47);
+    border-radius: 4px;
+}
+.add_new_task {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.71094rem;
+    border-radius: 0.2rem;
+    box-shadow: none !important;
+    color: #45CB85;
+    background-color: rgba(69, 203, 133, 0.1);
+    border-color: transparent;
+    cursor: pointer;
+}
+.add_new_task:hover {
+    color: #fff;
+    background-color: #45CB85;
+}
+.ic_style_add {
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    user-select: none;
+    font-size: 0.71094rem;
+    /* color: #45CB85; */
+    cursor: pointer;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'remixicon' !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    vertical-align: bottom !important;
+}
+.nav_tab_custom {
+    justify-content: unset!important;
+}

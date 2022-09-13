@@ -1,0 +1,33 @@
+.create-department {
+  .choose-locations {
+    position: relative;
+    i {
+      position: absolute;
+      right: 70px;
+      top: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      color: #2de309;
+      transition: .6s;
+      transform: translateY(-50%);
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+
+  label.required {
+    position: relative;
+
+    &::after {
+      content: " *";
+      position: absolute;
+      padding-left: 5px;
+      color: red;
+    }
+  }
+
+  .css-14el2xx-placeholder {
+    font-size: 13px;
+  }
+}

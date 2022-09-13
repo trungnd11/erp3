@@ -1,0 +1,40 @@
+.list-location {
+  p {
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+  ul {
+    margin-top: 10px;
+    list-style-type: none;
+    font-size: 1rem;
+    line-height: 2.5;
+    padding: 0;
+  } 
+
+  .item-location {
+    display: flex;
+    justify-content: space-between;
+    background-color: #cccccc29;
+    padding: 0 15px;
+    height: 33px;
+    align-items: center;
+    li {
+      font-size: 13px;
+    }
+    i {
+      color: red;
+      cursor: pointer;
+    }
+  }
+
+  // label.required {
+  //   position: relative;
+
+  //   &::after {
+  //     content: " *";
+  //     position: absolute;
+  //     padding-left: 5px;
+  //     color: red;
+  //   }
+  // }
+}

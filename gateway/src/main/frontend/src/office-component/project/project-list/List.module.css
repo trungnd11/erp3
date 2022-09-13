@@ -1,0 +1,82 @@
+.conten_modal_custom {
+    background-color: var(--vz-gray-300);
+}
+.header_modal_custom {
+    padding-bottom: 8px!important;
+}
+.footer_modal_custom {
+    /* background-color: #f2f2f7; */
+    background: var(--vz-light);
+    padding: 5px !important;;
+}
+.status_custom {
+    font-size:1.0rem;
+    /* background: #d7d8d8!important; */
+    color: #212529!important;
+    border-radius: 15px!important;
+    display: flex;
+}
+.status_custom_add {
+    font-size:1.0rem;
+    background: var(--ck-color-base-focus);
+    color: #212529!important;
+    border-radius: 15px!important;
+}
+.card_status_custom {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+.button_add_cancel {
+    padding-left: 20px;
+}
+.button_add_cancel:hover {
+    color:red;
+}
+.button_confirm_status {
+    padding-right: 20px;
+}
+.button_confirm_status:hover {
+    color:green;
+}
+.button_add_status {
+    /* padding-right: 20px; */
+}
+.button_add_status:hover {
+    color:green;
+}
+.input_new_status_custom {
+    margin-left: 7px;
+    margin-right: 7px;
+    height: 34px;
+    display: flex;
+}
+.inp_status_custom {
+    height: 100%;
+    border-radius: 15px!important;
+}
+.inp_status_custom_color {
+    height: 100%;
+    width: 25%;
+    border-radius: 15px!important;
+}
+.move_btn_custom {
+    /* margin-left: 140px; */
+}
+.move_btn_custom:hover {
+    color:#f2f2f7;
+}
+.move_total_custom {
+    position: relative;
+    margin-left: auto;
+}
+.header_modal_over_view {
+    display: block;
+    padding: unset!important;
+}
+.header_card_custom{
+    margin: unset!important;
+}
+.footer_modal_overview {
+    padding: 5px!important;
+    background: var(--vz-light);
+}

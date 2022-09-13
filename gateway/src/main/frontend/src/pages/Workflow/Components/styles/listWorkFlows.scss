@@ -1,0 +1,17 @@
+.wapper-list-workflow {
+  .card-title {
+    margin-bottom: 0;
+  }
+  .title-workflow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h5 {
+      display: flex;
+    }
+
+    i {
+      margin-right: 5px;
+    }
+  }
+}

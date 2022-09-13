@@ -1,0 +1,10 @@
+.header_canvas {
+    /* border-bottom: 2px solid var(--bs-gray-300); */
+    /* margin-bottom: 15px; */
+}
+.background_canvas {
+    background-color: var(--bs-gray-100);
+}
+.body_canvas_custom {
+    padding: unset;
+}

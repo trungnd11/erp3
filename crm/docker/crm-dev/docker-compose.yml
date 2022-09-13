@@ -1,0 +1,121 @@
+version: "3.9"  # optional since v1.27.0
+
+# init command: docker-compose --env-file ./dev.env -f docker-compose.yml up --build -d
+# after-init command: docker exec mongo /home/rs-init.sh
+# start command: docker-compose --env-file ./dev.env -f docker-compose.yml start
+# stop command: docker-compose --env-file ./dev.env -f docker-compose.yml up stop
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    ports:
+      - '3306:3306'
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    networks:
+      - btech
+
+  zookeeper:
+    image: zookeeper:3.8
+    container_name: zookeeper
+    ports:
+      - '2181:2181'
+    networks:
+      - btech
+
+  kafka:
+    image: bitnami/kafka:3.1
+    container_name: kafka
+    ports:
+      - '29092:29092'
+    environment:
+      - KAFKA_BROKER_ID=1
+      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=INTERNAL:PLAINTEXT,EXTERNAL_SAME_HOST:PLAINTEXT
+      - KAFKA_CFG_LISTENERS=INTERNAL://:9092,EXTERNAL_SAME_HOST://:29092
+      - KAFKA_CFG_ADVERTISED_LISTENERS=INTERNAL://kafka:9092,EXTERNAL_SAME_HOST://localhost:29092
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181 # if network_mode=host then 'zookeeper:' -> 'localhost:'
+      - ALLOW_PLAINTEXT_LISTENER=yes
+      - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=INTERNAL
+    depends_on:
+      - zookeeper
+    networks:
+      - btech
+
+  kafka-ui:
+    image: provectuslabs/kafka-ui:v0.4.0
+    container_name: kafka-ui
+    ports:
+      - "9001:8080"
+    environment: # https://github.com/provectus/kafka-ui/blob/master/README.md#env_variables
+      - KAFKA_CLUSTERS_0_NAME=cluster_btech
+      - KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=kafka:9092
+      - KAFKA_CLUSTERS_0_ZOOKEEPER=zookeeper:2181
+      - KAFKA_CLUSTERS_0_READONLY=false
+      - SERVER_SERVLET_CONTEXT_PATH=/kafkaui
+      - AUTH_TYPE=LOGIN_FORM
+      - SPRING_SECURITY_USER_NAME=kafkaui
+      - SPRING_SECURITY_USER_PASSWORD=kafkaui@
+    depends_on:
+      - zookeeper
+      - kafka
+    networks:
+      - btech
+
+  mongo: # https://tommynicoletti.medium.com/docker-mongodb-replica-how-to-64b1618b7db
+    build:
+      context: mongo/
+      args:
+        MONGO_VERSION: ${MONGO_VERSION}
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${DB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+    command: --auth --keyFile /home/mongo-cluster-key --config /home/mongod.conf --replSet rs0
+    networks:
+      - btech
+
+  mongo-replica: # https://tommynicoletti.medium.com/docker-mongodb-replica-how-to-64b1618b7db
+    build:
+      context: mongo/
+      args:
+        MONGO_VERSION: ${MONGO_VERSION}
+    container_name: mongo-replica
+    ports:
+      - "27018:27018"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${DB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+    command: --auth --keyFile /home/mongo-cluster-key --config /home/mongod.conf --port 27018 --replSet rs0
+    depends_on:
+      - mongo
+    networks:
+      - btech
+
+# Use other tools for better supporting
+#  mongo-express:
+#    image: mongo-express:0.54
+#    container_name: mongo-express
+#    ports:
+#      - "8081:8081"
+#    environment:
+#      ME_CONFIG_MONGODB_AUTH_HOST: rs0/mongo:27017,rs0/mongo-replica:27018
+#      ME_CONFIG_MONGODB_AUTH_DATABASE: admin
+#      ME_CONFIG_MONGODB_AUTH_USERNAME: ${DB_ROOT_USERNAME}
+#      ME_CONFIG_MONGODB_AUTH_PASSWORD: ${DB_ROOT_PASSWORD}
+#      ME_CONFIG_MONGODB_ADMINUSERNAME: ${DB_ROOT_USERNAME}
+#      ME_CONFIG_MONGODB_ADMINPASSWORD: ${DB_ROOT_PASSWORD}
+#    depends_on:
+#      - mongo
+#      - mongo-replica
+#    networks:
+#      - btech
+
+# we must create new bridge network, we'll get error when using default bridge network
+networks:
+  btech:
+    name: 'btech'
+    driver: 'bridge'

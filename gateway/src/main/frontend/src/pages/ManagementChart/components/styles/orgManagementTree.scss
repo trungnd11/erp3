@@ -1,0 +1,21 @@
+
+.org-management-tree {
+  .card {
+    min-height: 71vh;
+    .card-header {
+      background: #2780eb;
+      .card-title {
+        text-transform: uppercase;
+        color: #fff;
+        text-align: center;
+        font-weight: 600;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .svg-chart-container {
+    height: 100% !important;
+    width: 100% !important;
+  }
+}

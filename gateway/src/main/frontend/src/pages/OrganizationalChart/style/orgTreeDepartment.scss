@@ -1,0 +1,29 @@
+.style-tree-department {
+  .div-plus {
+    transition: all .6s;
+    .icon-plus {
+      font-size: 16px;
+      opacity: .6;
+    }
+
+    &:hover i {
+      color: #fff !important;
+      opacity: 1;
+    }
+
+    &:hover {
+      background: #299cdb !important;
+    }
+  }
+
+  .manager {
+    font-weight: 600;
+    span {
+      font-weight: 400;
+    }
+  }
+
+  .dependent-units {
+    color: #299cdb;
+  }
+}

@@ -1,0 +1,27 @@
+.avatar_custom {
+    display: flex;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+}
+.fs_16 {
+    font-size: 16px;
+}
+.no_avata_custom {
+    display: flex;
+    justify-content: center;
+}
+.card_border {
+    border: 1px solid var(--vz-boxed-body-bg);
+}
+.nodata_custom {
+    display: flex;
+    justify-content: center;
+    height: 60px;
+    align-items: center;
+    border: 1px solid var(--vz-gray-300);
+    border-radius: 4px;
+}
+.table_project_custom .table-responsive {
+    height: 100px;
+}

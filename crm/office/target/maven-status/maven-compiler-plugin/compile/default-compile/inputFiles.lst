@@ -1,0 +1,14 @@
+/home/tupm/crm/office/src/main/java/com/actech/platform/office/config/FileConfig.java
+/home/tupm/crm/office/src/main/java/com/actech/platform/office/common/controller/HomeController.java
+/home/tupm/crm/office/src/main/java/com/actech/platform/office/OfficeApplication.java
+/home/tupm/crm/office/src/main/java/com/actech/platform/office/config/AppProperties.java
+/home/tupm/crm/office/src/main/java/com/actech/platform/office/config/MongoConfig.java
+/home/tupm/crm/office/src/main/java/com/actech/platform/office/common/domain/AttachFile.java
+/home/tupm/crm/office/src/main/java/com/actech/platform/office/controller/MainController.java
+/home/tupm/crm/office/src/main/java/com/actech/platform/office/config/ResourceServerConfig.java
+/home/tupm/crm/office/src/main/java/com/actech/platform/office/common/service/FileService.java
+/home/tupm/crm/office/src/main/java/com/actech/platform/office/common/service/BaseService.java
+/home/tupm/crm/office/src/main/java/com/actech/platform/office/common/dto/Response.java
+/home/tupm/crm/office/src/main/java/com/actech/platform/office/common/controller/CommonController.java
+/home/tupm/crm/office/src/main/java/com/actech/platform/office/common/dto/AttachFileDto.java
+/home/tupm/crm/office/src/main/java/com/actech/platform/office/common/repository/AttachFileRepository.java

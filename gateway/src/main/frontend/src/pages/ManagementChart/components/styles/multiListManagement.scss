@@ -1,0 +1,25 @@
+.wapper-employee-multi {
+  height: 100vh;
+  .rst__virtualScrollOverride {
+    height: 92% !important;
+    .rstcustom__rowContents {
+      border-radius: 6px;
+      width: 300px;
+      &:hover {
+        color: red;
+        cursor: "pointer" !important;
+      }
+    }
+
+    .rstcustom__toolbarButton {
+      display: flex;
+      justify-content: end;
+      img {
+        height: 30px;
+        width: 30px;
+        object-fit: cover;
+        border-radius: 6px;
+      }
+    }
+  }
+}

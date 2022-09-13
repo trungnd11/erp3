@@ -1,0 +1,58 @@
+.wapper-department {
+  height: 100vh;
+  .card-header {
+    background: #299cdb;
+    border-radius: 6px 6px 0 0;
+    text-align: center;
+    position: relative;
+    h5,
+    h6 {
+      color: #fff;
+    }
+    h5 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+    label {
+      position: absolute;
+      font-size: 25px;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #fff;
+      transition: all 0.3s;
+      &:hover {
+        font-size: 25px;
+        transform: translate(-30%, -50%);
+      }
+    }
+  }
+
+  .search-department {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    display: none;
+    label {
+      margin: 0;
+    }
+    input {
+      margin-left: 10px;
+    }
+  }
+
+  .rst__virtualScrollOverride {
+    height: 92% !important;
+    .rstcustom__rowContents {
+      border-radius: 6px;
+      min-width: 300px;
+      &:hover {
+        color: red;
+        cursor: "pointer" !important;
+      }
+    }
+  }
+}

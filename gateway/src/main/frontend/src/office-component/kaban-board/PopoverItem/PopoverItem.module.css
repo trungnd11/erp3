@@ -1,0 +1,344 @@
+.setting_view_custom {
+    font-size: 14px;
+    padding-left: 0;
+    margin: 0px;
+    padding-inline-start: 0px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+.setting_view_layout {
+    font-size: 14px;
+    line-height: 1.5;
+    list-style: none;
+}
+.setting_view_underline {
+    font-size: 14px;
+    height: 1px;
+    background-color: var(--vz-border-color);
+    margin-top: calc(7px);
+    margin-bottom: 8px;
+    list-style: none;
+}
+.setting_view_config {
+    font-size: 14px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    list-style: none;
+    margin-top: 8px;
+}
+.setting_view_rename {
+    display: flex;
+    padding: 6px 8px;
+    font-size: 14px;
+    line-height: 20px;
+    min-height: 5px;
+    margin-left: 8px;
+    margin-right: 8px;
+    border-radius: 6px;
+    transition: background 33.333ms linear 0s;
+    color:var(--vz-dark);
+    cursor: pointer;
+}
+.setting_view_duplicate {
+    display: flex;
+    padding: 6px 8px;
+    font-size: 14px;
+    line-height: 20px;
+    min-height: 5px;
+    margin-left: 8px;
+    margin-right: 8px;
+    border-radius: 6px;
+    transition: background 33.333ms linear 0s;
+    color: rgb(36, 41, 47);
+    cursor: pointer;
+    --divider-color: rgba(208,215,222,0.48);
+}
+.setting_view_delete {
+    display: flex;
+    padding: 6px 8px;
+    font-size: 14px;
+    line-height: 20px;
+    min-height: 5px;
+    margin-left: 8px;
+    margin-right: 8px;
+    border-radius: 6px;
+    transition: background 33.333ms linear 0s;
+    color: var(--ck-color-base-error);
+    cursor: pointer;
+    --divider-color: rgba(208,215,222,0.48);
+}
+.setting_view_layout_header {
+    line-height: 1.5;
+    word-wrap: break-word;
+    /* list-style: none; */
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--vz-gray-800);
+}
+.setting_view_layout_header_text {
+    line-height: 1.5;
+    word-wrap: break-word;
+    list-style: none;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--vz-gray-900);
+    box-sizing: border-box;
+}
+.layout_table_board {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-inline-start: 0px;
+    display: flex;
+    padding-left: 8px;
+    padding-right: 8px;
+    width: 320px;
+    height: 95px;
+}
+.layout_table {
+    display: flex;
+    padding: 6px 8px;
+    font-size: 14px;
+    line-height: 20px;
+    min-height: 5px;
+    margin: 4px 0px 8px;
+    border-radius: 0px;
+    transition: background 33.333ms linear 0s;
+    color: var(--vz-dark);
+    cursor: pointer;
+    flex: 1 1 0%;
+    border: 1px solid var(--vz-border-color);
+    text-align: center;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    align-items: center;
+}
+
+.layout_table_active {
+    display: flex;
+    padding: 6px 8px;
+    font-size: 14px;
+    line-height: 20px;
+    min-height: 5px;
+    margin: 4px 0px 8px;
+    border-radius: 0px;
+    transition: background 33.333ms linear 0s;
+    color: rgb(36, 41, 47);
+    cursor: pointer;
+    flex: 1 1 0%;
+    border: 1px solid rgb(9, 105, 218);
+    text-align: center;
+    background-color: rgb(221, 244, 255);
+    box-shadow: rgb(9, 105, 218) 0px 0px 0px 1px inset;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    align-items: center;
+}
+
+.layout_board {
+    display: flex;
+    padding: 6px 8px;
+    font-size: 14px;
+    line-height: 20px;
+    min-height: 5px;
+    margin: 4px 0px 8px;
+    border-radius: 0px;
+    transition: background 33.333ms linear 0s;
+    color: var(--vz-dark);
+    cursor: pointer;
+    flex: 1 1 0%;
+    border: 1px solid var(--vz-border-color);
+    text-align: center;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-left: 0px;
+    align-items: center;
+}
+.layout_board:hover {
+    background-color: rgba(208, 215, 222, 0.32);
+    color: rgb(36, 41, 47);
+}
+.layout_table:hover {
+    background-color: rgba(208, 215, 222, 0.32);
+    color: rgb(36, 41, 47);
+}
+.layout_board_active {
+    display: flex;
+    padding: 6px 8px;
+    font-size: 14px;
+    line-height: 20px;
+    min-height: 5px;
+    margin: 4px 0px 8px;
+    border-radius: 0px;
+    transition: background 33.333ms linear 0s;
+    color: rgb(36, 41, 47);
+    cursor: pointer;
+    flex: 1 1 0%;
+    border: 1px solid rgb(9, 105, 218);
+    text-align: center;
+    background-color: rgb(221, 244, 255);
+    box-shadow: rgb(9, 105, 218) 0px 0px 0px 1px inset;
+    --divider-color: rgba(208,215,222,0.48);
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    align-items: center;
+}
+.layout_table_background {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.setting_view_config_header {
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(87, 96, 106);
+}
+.setting_view_config_text {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(87, 96, 106);
+    box-sizing: border-box;
+}
+.setting_view_config_content {
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-inline-start: 0px;
+}
+.setting_view_config_content_text {
+    display: flex;
+    padding: 6px 8px;
+    font-size: 14px;
+    line-height: 20px;
+    min-height: 5px;
+    margin-left: 8px;
+    margin-right: 8px;
+    border-radius: 6px;
+    transition: background 33.333ms linear 0s;
+    color: rgb(36, 41, 47);
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.setting_view_config_content_text:hover {
+    background-color: rgba(208, 215, 222, 0.32);
+}
+.config_view_group {
+    /* font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"; */
+}
+.config_view_group_none {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 85%;
+    font-style: italic;
+}
+.setting_config_btn {
+    height: 20px;
+    flex-shrink: 0;
+    color: rgb(87, 96, 106);
+    margin-left: 35px;
+}
+.setting_config_btn_ctrl {
+    border: 1px solid rgb(208, 215, 222);
+    background-color: rgb(255, 255, 255);
+    color: rgb(87, 96, 106);
+    padding: 1px 6px;
+    border-radius: 6px;
+    font-weight: normal;
+    font-size: 12px;
+}
+.setting_view_rename:hover {
+    background-color: rgba(208, 215, 222, 0.32);
+}
+.setting_view_duplicate:hover {
+    background-color: rgba(208, 215, 222, 0.32);
+}
+.setting_view_delete:hover {
+    background-color: rgb(255, 235, 233);
+}
+.setting_view_bottom {
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-inline-start: 0px;
+    display: flex;
+}
+.setting_view_bottom_save {
+    display: flex;
+    padding: 16px 8px;
+    font-size: 14px;
+    line-height: 20px;
+    min-height: 5px;
+    margin: -8px 0px;
+    border-radius: 0px;
+    transition: background 33.333ms linear 0s;
+    color: rgb(9, 105, 218);
+    cursor: pointer;
+    flex: 1 1 auto;
+    border-right: 1px solid rgb(208, 215, 222);
+    border-top-color: rgb(208, 215, 222);
+    border-bottom-color: rgb(208, 215, 222);
+    border-left-color: rgb(208, 215, 222);
+    text-align: center;
+    font-weight: 400;
+}
+.setting_view_bottom_discard {
+    display: flex;
+    padding: 16px 8px;
+    font-size: 14px;
+    line-height: 20px;
+    min-height: 5px;
+    margin: -8px 0px;
+    border-radius: 0px;
+    transition: background 33.333ms linear 0s;
+    color: rgb(87, 96, 106);
+    cursor: pointer;
+    flex: 1 1 auto;
+    text-align: center;
+    font-weight: 400;
+    --divider-color: rgba(208,215,222,0.48);
+}
+.bottom_save_btn {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    min-width: 0px;
+    position: relative;
+}
+.bottom_save_btn::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: -7px;
+    border-width: 0px;
+    border-style: solid;
+    border-image: initial;
+    border-color: var(--divider-color,transparent);
+}
+.setting_view_bottom_save:hover {
+    background-color: rgba(208, 215, 222, 0.32);
+    color: rgb(36, 41, 47);
+}
+
+.setting_view_bottom_discard:hover {
+    background-color: rgba(208, 215, 222, 0.32);
+    color: rgb(36, 41, 47);
+}
+.icon_custom_down {
+    font-size: 17px;
+    margin-left: 0.5rem!important;
+}
+.icon_closed_popover {
+    position: absolute;
+    right: 10px;
+    font-size: 18px;
+    top: 5px;
+    cursor: pointer;
+}

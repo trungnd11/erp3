@@ -1,0 +1,88 @@
+
+# spring:
+#   profiles:
+#     active: prod
+
+# ---
+spring:
+  # profile: prod
+  application:
+    name: auth
+  jackson:
+    default-property-inclusion: NON_NULL
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://123.31.42.203:3507/erp_dev?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+    username: dev
+    password: vdcdev$2019
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        format_sql: true
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+
+server:
+  port: 9000
+  servlet:
+    context-path: /auth
+
+security:
+  authentication:
+    jwt:
+      # This token must be encoded using Base64 and be at least 256 bits long (you can type `openssl rand -base64 64` on your command line to generate a 512 bits one)
+      base64-secret: MzllMmUyY2UwNDg3ZTNkNTQ5MGRhYmI2NzA5NGU4MjkxZDAwZTcxOGIyZTg2Y2ZjYzlhNjdiY2M4NWYzZjcwNmEyODMzMzIxZjE4MWZlNjVkMGU5NTkzMGNjNjY5NzdhNzc3YmU1NmUzMjIyOWQ0OGY3NTA0MDBkNjEwNzU1Zjk=
+      secret: 39e2e2ce0487e3d5490dabb67094e8291d00e718b2e86cfcc9a67bcc85f3f706a2833321f181fe65d0e95930cc66977a777be56e32229d48f750400d610755f9
+      # Token is valid 24 hours
+      token-validity-in-seconds: 14400
+      token-validity-in-seconds-for-remember-me: 604800
+  content-security-policy: "default-src 'self'; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com data:"
+
+# ---
+# spring:
+#   profile: dev
+#   application:
+#     name: auth
+#   jackson:
+#     default-property-inclusion: NON_NULL
+#   datasource:
+#     driver-class-name: com.mysql.cj.jdbc.Driver
+#     url: jdbc:mysql://localhost:3306/erp?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+#     username: root
+#     password: 
+#   jpa:
+#     show-sql: true
+#     hibernate:
+#       ddl-auto: update
+#     properties:
+#       hibernate:
+#         dialect: org.hibernate.dialect.MySQL5Dialect
+#         format_sql: true
+
+# eureka:
+#   client:
+#     service-url:
+#       default-zone: http://localhost:8761/eureka
+
+# server:
+#   port: 9000
+#   servlet:
+#     context-path: /auth
+
+# security:
+#   authentication:
+#     jwt:
+#       # This token must be encoded using Base64 and be at least 256 bits long (you can type `openssl rand -base64 64` on your command line to generate a 512 bits one)
+#       base64-secret: MzllMmUyY2UwNDg3ZTNkNTQ5MGRhYmI2NzA5NGU4MjkxZDAwZTcxOGIyZTg2Y2ZjYzlhNjdiY2M4NWYzZjcwNmEyODMzMzIxZjE4MWZlNjVkMGU5NTkzMGNjNjY5NzdhNzc3YmU1NmUzMjIyOWQ0OGY3NTA0MDBkNjEwNzU1Zjk=
+#       secret: 39e2e2ce0487e3d5490dabb67094e8291d00e718b2e86cfcc9a67bcc85f3f706a2833321f181fe65d0e95930cc66977a777be56e32229d48f750400d610755f9
+#       # Token is valid 24 hours
+#       token-validity-in-seconds: 14400
+#       token-validity-in-seconds-for-remember-me: 604800
+#   content-security-policy: "default-src 'self'; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com data:"

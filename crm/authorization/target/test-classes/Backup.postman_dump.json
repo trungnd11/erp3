@@ -1,0 +1,493 @@
+{
+	"version": 1,
+	"collections": [
+		{
+			"id": "56dd83e6-9ed8-4f48-bc3f-3111a0363c24",
+			"uid": "0-56dd83e6-9ed8-4f48-bc3f-3111a0363c24",
+			"name": "authorization",
+			"description": null,
+			"auth": null,
+			"events": null,
+			"variables": [],
+			"order": [
+				"eae76e1a-5851-4137-90e9-3278f8caecba",
+				"02c69c12-3449-4a86-9a97-7ec3c67f5a9a",
+				"0744ca0d-cdaa-4215-9739-f8a725fb349d",
+				"f5d943f2-2c50-4b66-8c44-be5e6a2fb5ff",
+				"9515d88c-f615-4d99-ad25-225ab68899be",
+				"f787e9bb-05f7-4d41-965c-dbe6b4be22f4",
+				"2c78ee2c-f275-4653-826f-7dec6e3c118e",
+				"79992914-b997-409b-8e51-d4641f509523",
+				"dde7ea9e-a054-43f7-a417-d17188fda2a3",
+				"160a3445-1eb3-4731-9a91-54cb7191747e"
+			],
+			"folders_order": [],
+			"protocolProfileBehavior": {},
+			"createdAt": "2022-05-12T04:34:02.607Z",
+			"folders": [],
+			"requests": [
+				{
+					"id": "02c69c12-3449-4a86-9a97-7ec3c67f5a9a",
+					"uid": "0-02c69c12-3449-4a86-9a97-7ec3c67f5a9a",
+					"name": "get authorization code",
+					"url": "{{base_url}}/oauth2/authorize",
+					"description": null,
+					"data": [
+						{
+							"key": "client_id",
+							"value": "{{client_id}}",
+							"description": "",
+							"type": "default",
+							"enabled": true
+						},
+						{
+							"key": "scope",
+							"value": "{{scope}}",
+							"description": "",
+							"type": "default",
+							"enabled": true
+						},
+						{
+							"key": "response_type",
+							"value": "code",
+							"description": "",
+							"type": "default",
+							"enabled": true
+						},
+						{
+							"key": "response_mode",
+							"value": "query",
+							"description": "",
+							"type": "default",
+							"enabled": true
+						},
+						{
+							"key": "redirect_uri",
+							"value": "{{redirect_uri}}",
+							"description": "",
+							"type": "default",
+							"enabled": true
+						}
+					],
+					"dataOptions": {
+						"raw": {
+							"language": "json"
+						}
+					},
+					"dataMode": "urlencoded",
+					"headerData": [],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": {
+						"type": "basic",
+						"basic": [
+							{
+								"key": "password",
+								"value": "admin2",
+								"type": "string"
+							},
+							{
+								"key": "username",
+								"value": "admin2@sohoa.asia",
+								"type": "string"
+							}
+						]
+					},
+					"events": null,
+					"folder": null,
+					"responses_order": [],
+					"currentHelper": "basicAuth",
+					"helperAttributes": {
+						"id": "basic",
+						"username": "admin2@sohoa.asia",
+						"password": "admin2"
+					},
+					"collectionId": "56dd83e6-9ed8-4f48-bc3f-3111a0363c24",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "0744ca0d-cdaa-4215-9739-f8a725fb349d",
+					"uid": "0-0744ca0d-cdaa-4215-9739-f8a725fb349d",
+					"name": "get access token for client",
+					"url": "{{base_url}}/oauth2/token",
+					"description": null,
+					"data": [
+						{
+							"key": "grant_type",
+							"value": "authorization_code",
+							"description": "",
+							"type": "default",
+							"enabled": true
+						},
+						{
+							"key": "code",
+							"value": "5SL7nQnBaSm3vE1Esp8qJsSmOpZySNK35tZK89muAGxNvwt53WXrWImhBav4bMaoWj9XT7FDCaJrE_FpcDnsb-Kpv8G8aUKl2BdogEDA-R38wIDgEZRphK9zyYws08b4",
+							"description": "",
+							"type": "default",
+							"enabled": true
+						},
+						{
+							"key": "client_id",
+							"value": "{{client_id}}",
+							"description": "",
+							"type": "default",
+							"enabled": true
+						},
+						{
+							"key": "client_secret",
+							"value": "{{client_secret}}",
+							"description": "",
+							"type": "default",
+							"enabled": true
+						},
+						{
+							"key": "redirect_uri",
+							"value": "{{redirect_uri}}",
+							"description": "",
+							"type": "default",
+							"enabled": true
+						}
+					],
+					"dataOptions": {
+						"raw": {
+							"language": "json"
+						}
+					},
+					"dataMode": "urlencoded",
+					"headerData": [],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": {
+						"type": "noauth"
+					},
+					"events": null,
+					"folder": null,
+					"responses_order": [],
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "56dd83e6-9ed8-4f48-bc3f-3111a0363c24",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "160a3445-1eb3-4731-9a91-54cb7191747e",
+					"uid": "0-160a3445-1eb3-4731-9a91-54cb7191747e",
+					"name": "get user info",
+					"url": "http://localhost:8102/creator/userinfo",
+					"description": null,
+					"data": null,
+					"dataOptions": {
+						"raw": {
+							"language": "json"
+						}
+					},
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": {
+						"type": "oauth2",
+						"oauth2": [
+							{
+								"key": "headerPrefix",
+								"value": "Bearer",
+								"type": "string"
+							},
+							{
+								"key": "addTokenTo",
+								"value": "header",
+								"type": "string"
+							}
+						]
+					},
+					"events": null,
+					"folder": null,
+					"responses_order": [],
+					"currentHelper": "oAuth2",
+					"helperAttributes": {
+						"id": "oAuth2",
+						"addTokenTo": "header"
+					},
+					"collectionId": "56dd83e6-9ed8-4f48-bc3f-3111a0363c24",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "2c78ee2c-f275-4653-826f-7dec6e3c118e",
+					"uid": "0-2c78ee2c-f275-4653-826f-7dec6e3c118e",
+					"name": "join-group",
+					"url": "{{base_internal_url}}/user/join-group",
+					"description": null,
+					"data": [],
+					"dataOptions": {
+						"raw": {
+							"language": "json"
+						}
+					},
+					"dataMode": "raw",
+					"headerData": [],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": null,
+					"folder": null,
+					"responses_order": [],
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "56dd83e6-9ed8-4f48-bc3f-3111a0363c24",
+					"rawModeData": "{\r\n    \"username\": \"admin2@sohoa.asia\",\r\n    \"groupName\": \"CEO\"\r\n}",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "79992914-b997-409b-8e51-d4641f509523",
+					"uid": "0-79992914-b997-409b-8e51-d4641f509523",
+					"name": "modify-group-permissions",
+					"url": "{{base_internal_url}}/group/modify-permissions",
+					"description": null,
+					"data": [],
+					"dataOptions": {
+						"raw": {
+							"language": "json"
+						}
+					},
+					"dataMode": "raw",
+					"headerData": [],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": null,
+					"folder": null,
+					"responses_order": [],
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "56dd83e6-9ed8-4f48-bc3f-3111a0363c24",
+					"rawModeData": "{\r\n    \"author\": \"admin2@sohoa.asia\",\r\n    \"name\": \"CEO\",\r\n    \"permissionKeys\": [\"CEO\",\"HR\"]\r\n}",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "9515d88c-f615-4d99-ad25-225ab68899be",
+					"uid": "0-9515d88c-f615-4d99-ad25-225ab68899be",
+					"name": "create permission",
+					"url": "{{base_internal_url}}/permission",
+					"description": null,
+					"data": [],
+					"dataOptions": {
+						"raw": {
+							"language": "json"
+						}
+					},
+					"dataMode": "raw",
+					"headerData": [],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": null,
+					"folder": null,
+					"responses_order": [],
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "56dd83e6-9ed8-4f48-bc3f-3111a0363c24",
+					"rawModeData": "{\r\n    \"author\": \"admin2@sohoa.asia\",\r\n    \"key\": \"CEO\",\r\n    \"title\": \"CEO permission\"\r\n}",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "dde7ea9e-a054-43f7-a417-d17188fda2a3",
+					"uid": "0-dde7ea9e-a054-43f7-a417-d17188fda2a3",
+					"name": "get user detail",
+					"url": "{{base_internal_url}}/user/detail?username=admin2@sohoa.asia",
+					"description": null,
+					"data": null,
+					"dataOptions": {
+						"raw": {
+							"language": "json"
+						}
+					},
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "username",
+							"value": "admin2@sohoa.asia",
+							"equals": true,
+							"description": null,
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": null,
+					"folder": null,
+					"responses_order": [],
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "56dd83e6-9ed8-4f48-bc3f-3111a0363c24",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "eae76e1a-5851-4137-90e9-3278f8caecba",
+					"uid": "0-eae76e1a-5851-4137-90e9-3278f8caecba",
+					"name": "create registered client",
+					"url": "{{base_internal_url}}/oauth2-registered-client",
+					"description": null,
+					"data": [],
+					"dataOptions": {
+						"raw": {
+							"language": "json"
+						}
+					},
+					"dataMode": "raw",
+					"headerData": [],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": null,
+					"folder": null,
+					"responses_order": [],
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "56dd83e6-9ed8-4f48-bc3f-3111a0363c24",
+					"rawModeData": "{\r\n    \"internalSecretKey\": \"{{internal_secret_key}}\",\r\n    \"clientId\": \"{{client_id}}\",\r\n    \"clientSecret\": \"{{client_secret}}\",\r\n    \"redirectUri\": \"{{redirect_uri}}\",\r\n    \"scope\": \"{{scope}}\",\r\n    \"clientName\": \"{{client_name}}\"\r\n}",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "f5d943f2-2c50-4b66-8c44-be5e6a2fb5ff",
+					"uid": "0-f5d943f2-2c50-4b66-8c44-be5e6a2fb5ff",
+					"name": "create user",
+					"url": "{{base_internal_url}}/user",
+					"description": null,
+					"data": [],
+					"dataOptions": {
+						"raw": {
+							"language": "json"
+						}
+					},
+					"dataMode": "raw",
+					"headerData": [],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": null,
+					"folder": null,
+					"responses_order": [],
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "56dd83e6-9ed8-4f48-bc3f-3111a0363c24",
+					"rawModeData": "{\r\n    \"username\": \"admin2@sohoa.asia\",\r\n    \"password\": \"admin2\"\r\n}",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "f787e9bb-05f7-4d41-965c-dbe6b4be22f4",
+					"uid": "0-f787e9bb-05f7-4d41-965c-dbe6b4be22f4",
+					"name": "create group",
+					"url": "{{base_internal_url}}/group",
+					"description": null,
+					"data": [],
+					"dataOptions": {
+						"raw": {
+							"language": "json"
+						}
+					},
+					"dataMode": "raw",
+					"headerData": [],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": null,
+					"folder": null,
+					"responses_order": [],
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "56dd83e6-9ed8-4f48-bc3f-3111a0363c24",
+					"rawModeData": "{\r\n    \"author\": \"admin2@sohoa.asia\",\r\n    \"name\": \"CEO\",\r\n    \"title\": \"CEO group\"\r\n}",
+					"headers": "",
+					"pathVariables": {}
+				}
+			]
+		}
+	],
+	"environments": [
+		{
+			"id": "084df24d-f4d7-4ea1-906a-3086daf78edf",
+			"name": "authorization",
+			"values": [
+				{
+					"key": "internal_secret_key",
+					"value": "crm123",
+					"type": "default",
+					"enabled": true
+				},
+				{
+					"key": "base_internal_url",
+					"value": "http://localhost:8100/api/internal",
+					"type": "default",
+					"enabled": true
+				},
+				{
+					"key": "base_url",
+					"value": "http://localhost:8100",
+					"type": "default",
+					"enabled": true
+				},
+				{
+					"key": "client_id",
+					"value": "creator-client",
+					"type": "default",
+					"enabled": true
+				},
+				{
+					"key": "client_secret",
+					"value": "creator-secret",
+					"type": "default",
+					"enabled": true
+				},
+				{
+					"key": "redirect_uri",
+					"value": "http://gateway:8101/login/oauth2/code/creator-client",
+					"type": "default",
+					"enabled": true
+				},
+				{
+					"key": "scope",
+					"value": "openid",
+					"type": "default",
+					"enabled": true
+				},
+				{
+					"key": "client_name",
+					"value": "creator-client",
+					"type": "default",
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "42d7828d-bf64-4690-a3d7-898508a999c3",
+			"name": "My Workspace - globals",
+			"values": []
+		},
+		{
+			"id": "89304280-290d-4f9c-a66f-aaea6d35ecf0",
+			"name": "My Workspace - globals",
+			"values": []
+		}
+	],
+	"headerPresets": [],
+	"globals": []
+}

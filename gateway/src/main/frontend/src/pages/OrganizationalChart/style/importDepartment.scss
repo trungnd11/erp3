@@ -1,0 +1,29 @@
+.wapper-import-function {
+  .import-description {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background: #abaaa612;
+    ul {
+      padding-left: 20px;
+    }
+
+    i {
+      margin-right: 5px;
+    }
+  }
+
+  .dropzone {
+    min-height: 70px;
+
+    .dz-message {
+      margin: 0;
+    }
+
+    .display-4 {
+      font-size: 30px;
+    }
+  }
+}
